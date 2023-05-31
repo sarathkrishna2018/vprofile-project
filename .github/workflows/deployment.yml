@@ -1,15 +1,15 @@
 name: hello-world
-on: 
+on:
   workflow_dispatch:
     inputs:
-      flutter_version:
-        description: 'Framework version'
+      deploy_environment:
+        description: 'deploy to'
         required: true
-        default: '2.5.3'
-      publish_artifacts:
-        description: 'Publish artifacts'
-        required: true
-        default: 'true'
+        default: 'in'
+        options:
+        - in
+        - us
+        - stage
 jobs:
   my-job:
     runs-on: ubuntu-latest
